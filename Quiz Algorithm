@@ -1,0 +1,232 @@
+Algorithm:
+class Student
+    Step 1: 
+        Declare float marks
+        Declare float avg
+        Declare float total=2
+        Declare int subjects=1
+        Declare String name
+        Declare String grade
+        Declare String standard
+    Step 2:
+        [Function for Displaying Student Data]
+        displayStudentData  int n 
+            Step 2.1: 
+                [Call grade function] 
+                grade(n) 
+            Step 2.2: 
+                [Call put function] 
+                put()
+    Step 3:
+        [Function for Getting Student Data]
+        void sget ()
+            Step 3.1:
+                Display "Enter name: "
+                Accept in data and put it in name variable
+            Step 3.2:
+                Display "Enter the standard: "
+                Accept in data and put it in standard variable
+    Step 4:
+        [Function for calculating Average]	
+        void avg (int n)
+            Step 4.1:
+                [Calculates the avg]
+                avg =marks/n
+    Step 5:
+        [Function for getting Grade]            
+        void grade (int n)
+            Step 5.1: 
+                [Call avg function]
+                avg (n) 
+            Step 5.2:
+                Display "the student grade is"
+            Step 5.3:    
+                if avg>=80 Then
+                    Display "A"
+                else if avg>=60 && avg<80 Then
+                    Display "B"                
+                else if avg>=40 && avg<60 Then
+                    Display "C"
+                else
+                    Display "D"
+    Step 6:
+        [Function for Displaying Data of Student]
+        void put () 
+            Step 6.1:
+                Display "Student name: " and name vairable
+            Step 6.2:
+                Display "Student Class: " and standard vairable
+            Step 6.3:
+                Display "Student marks: " and marks vairable and " out of " and total vairable
+            Step 6.4:
+                Display "Student Grade: " and grade vairable
+            Step 6.5:
+                Display "Student Average: " and avg variable
+
+class Admin inherits Question Class
+    Step 1:    
+        Declare private String[] a_na"AB
+        Declare private String[] a_pa"ab
+        Declare protected Boolean access_granted=false
+    Step 2:
+        [Constructor for Admin class to intialize its variables]    
+        Admin() 
+        Step 2.1:
+            Display "\nUsername: " 
+        Step 2.2:
+            Declare tempname
+            Accept value in tempname variable
+        Step 2.3:
+            Display "\nPassword: " 
+            String temppass=s.next  
+        Step 2.4:
+            for i in 0 ... a_name.length Repeat Step 2.5
+        Step 2.5:    
+            if tempname==a_name[i] && temppass==a_pass[i] Then
+                Set access_granted=true
+            else 
+                Display "Access Denied"
+            [End For Loop]
+            
+    Step 3:    
+        [Function for inserting values]
+        void insert()  
+        Step 3.1:
+            if access_granted Then
+                Declare String temp
+                Display "Enter Question: " 
+                Accept value and store in temp vairable 
+                ques.add (temp) 
+                Display "Enter Options: "
+                    Accept value and store in temp vairable   
+                opt.add (temp) 
+                Display "Enter Answers: " 
+                    Accept value and store in temp vairable   
+                ans.add (temp) 
+                
+    Step 4:
+        void delete()
+        Step 4.1:  
+            if access_granted Then
+        Step 4.2:
+            for i in 0, 1, ... n Repeat
+                Display  i+" "+ques.get i 
+            [End For Loop]
+        Step 4.3:
+            Display "Which question do u wish to Delete Enter Number ? "
+            Declare int q_no
+            Accept Value and store in variable q_no
+        Step 4.4:            
+            ques.remove (q_no) 
+            opt.remove( q_no) 
+            ans.remove (q_no) 
+            [End if]
+    
+    Step 5:
+        void edit (float total, int subjects )
+        Step 5.1:    
+            Display "Enter Total Marks: " 
+            Accept value and store in variable total
+        Step 5.2:  
+            Display "Enter Total Number of Subjects: " 
+            Accept value and store in variable subjects 
+
+class Question
+    Step 1:
+        Declare int n
+        Declare Vector ques= new Vector(10,3)
+        Declare Vector opt= new Vector(10,3)
+        Declare Vector ans= new Vector(10,3)
+    Step 2:    
+        [Creating default questions]    
+        Question()
+        Step 2.1:
+            ques.add("Question 1")
+            opt.add("a) 1\nb) 2\nc) 3\nd) 4")
+            ans.add("a")
+        Step 2.2:
+            ques.add("Question 2")
+            opt.add("a) 1\nb) 2\nc) 3\nd) 4")
+            ans.add("b")
+    Step 3:
+        public void get(Student S)
+        Step 3.1:
+            [Get size of ques array]
+            Declare n= ques.size()
+        Step 3.2:
+            for i in 0, 1, ... ,n Repeat Step 3.3 and 3.4 
+        Step 3.3:
+            Display ques.get(i)
+            Display opt.get(i)
+            Display Ans. 
+            Delcare String uans
+            Accept value from user and store it in variable uans
+            Declare String temp= ans.get(i).toString()
+        Step 3.4:
+            if uans.compareTo(temp)==0 Then
+                S.marks++
+            else
+                S.marks--
+            [End for loop]      
+     Step 4: 
+        [For finding out number of Questions]   
+        public int numberOfQues()
+            n= ques.size()
+            return n
+
+public class Main
+    public static void main(String[] args)
+    Step 1:
+	    Declare Student s= new Student()
+	    Declare int ch
+	    Declare Boolean exit=true
+	Step 2:    
+        do Step 3 , 4 and 5
+    Step 3:	    
+	    Display "1. Student Login\n2. Admin Login\n3. Exit Program\nEnter Choice: "
+	    Accept value and store in vairbale ch
+    Step 4:
+	    switch(ch)
+        Step 4.1:
+	        case 1:
+            [Student Login]
+	            Question q=new Question()
+	            s.sget()
+	            q.get(s)
+	            s.displayStudentData(q.numberOfQues())
+	            break
+        Step 4.2:
+	        case 2:
+            [Admin Login]
+            Step 4.2.1 :
+	            Declare int choice
+	            Declare Admin a= new Admin()
+	        Step 4.2.2 :
+                do Step 4.2.3
+	            Display "1. Add a Question\n2. Delete a Question\n3. Edit a Question\n4.Exit Admin Page\n5. Exit Program\nEnter a choice"
+	            Accept value and store in vairable choice
+            Step 4.2.3 :
+	            switch(choice)
+	                case 1:
+                        a.insert()
+	                    break
+	                case 2:
+                        a.delete()
+	                    break
+	                case 3:
+                        a.edit(s.total,s.subjects)
+	                    break
+	                case 4:
+	                    break
+	                case 5:
+	                    exit=false
+	                    break
+	            while(choice==4||choice==5)
+	                break
+        Step 4.3: 
+	            case 3:
+                [Exit Program]
+	                    exit=false
+	                    break
+	Step 5:
+	    while(exit)
